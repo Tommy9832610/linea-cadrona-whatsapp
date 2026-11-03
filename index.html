@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #12181b;
+            background-color: #0d1117;
             color: #e1e4e6;
             margin: 0;
             padding: 20px;
@@ -15,17 +15,17 @@
         }
         .container {
             max-width: 800px;
-            margin: 40px auto;
-            background: #1b2227;
+            margin: 30px auto;
+            background: #161b22;
             padding: 30px;
             border-radius: 12px;
-            border: 1px solid #2f383e;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
         }
         h1 {
             color: #58a6ff;
             font-size: 1.8rem;
-            border-bottom: 2px solid #2f383e;
+            border-bottom: 2px solid #30363d;
             padding-bottom: 15px;
             margin-top: 0;
         }
@@ -37,32 +37,55 @@
         p {
             color: #8b949e;
         }
-        .protocol-box {
+        .box {
             background: #21262d;
             border-left: 4px solid #238636;
             padding: 15px;
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
         }
-        .warning-box {
-            background: #21262d;
-            border-left: 4px solid #da3633;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
+        .interactive-panel {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        button {
+            background-color: #238636;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #2ea043;
+        }
+        #scusa-output {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #ffa657;
+            font-style: italic;
+            min-height: 40px;
         }
         ul {
             padding-left: 20px;
+            color: #8b949e;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .footer {
             text-align: center;
             margin-top: 40px;
             font-size: 0.85rem;
             color: #484f58;
-            border-top: 1px solid #2f383e;
+            border-top: 1px solid #30363d;
             padding-top: 15px;
         }
     </style>
@@ -71,31 +94,48 @@
 
     <div class="container">
         <h1>🛡️ Centro Assistenza: Linea Cadorna-WhatsApp</h1>
-        <p>Benvenuti nel quartier generale ufficiale di pronto soccorso esistenziale per sopravvissuti a chat di classe, nostalgici molesti e cene della disperazione.</p>
+        <p>Quartier generale di pronto soccorso esistenziale per sopravvissuti a chat di classe, nostalgici molesti e cene della disperazione.</p>
 
-        <h2>📋 Il Protocollo Igloo (Manuale di Emergenza)</h2>
-        
-        <div class="protocol-box">
-            <strong>Codice Rosso - Sondaggio Cena di Classe:</strong><br>
-            Attivazione immediata del <em>Protocollo Ghiacciaio dell'Ortler</em>. Silenziamento perpetuo della chat e archiviazione nei fondali della rubrica digitale.
+        <h2>📋 Protocollo Igloo (Stato della Difesa)</h2>
+        <div class="box">
+            <strong>Stato attuale:</strong> Permafrost emotivo attivo. Nessuna spunta blu autorizzata nei settori critici.
         </div>
 
-        <div class="warning-box">
-            <strong>Attenzione ai Vocali Molesti:</strong><br>
-            Messaggi audio superiori a 3 minuti contenenti proposte di agriturismo con menù fisso costituiscono un attacco d'artiglieria pesante. Non rispondere alle provocazioni.
+        <h2>🎛️ Centro di Comando Interattivo</h2>
+        <div class="interactive-panel">
+            <p><strong>Generatore Tattico di Scuse d'Emergenza</strong></p>
+            <p>Clicca sul pulsante per estrarre una scusa impenetrabile per declinare la prossima cena di classe senza creare incidenti diplomatici:</p>
+            <button onclick="generaScusa()">Estrai Scusa Tattica</button>
+            <div id="scusa-output">"Premi il pulsante per attivare la linea difensiva..."</div>
         </div>
 
         <h2>🎯 Reparti Operativi</h2>
         <ul>
-            <li><strong>Reparto Inviti Indesiderati:</strong> Come declinare con eleganza senza sembrare un eremita.</li>
-            <li><strong>Reparto Fuga Digitale:</strong> Tecniche di mimetizzazione da ninja digitale senza lasciare spunte blu.</li>
-            <li><strong>Reparto Delazioni:</strong> Lettura degli screenshot di contrabbando per godersi la caduta della Corazzata altrui.</li>
+            <li><strong>Reparto Inviti:</strong> Gestione automatica del "Ci penso e ti faccio sapere" (che significa no).</li>
+            <li><strong>Reparto Fuga Digitale:</strong> Mimetizzazione alpina e archiviazione perpetua delle chat.</li>
+            <li><strong>Reparto Delazioni:</strong> Consultazione sicura degli screenshot di contrabbando.</li>
         </ul>
 
         <div class="footer">
-            Progetto open-source di resistenza digitale protetto da permafrost emotivo. 🏔️
+            Ecosistema open-source protetto da Ghiacciaio dell'Ortler 🏔️
         </div>
     </div>
+
+    <script>
+        const scuse = [
+            "“Volentieri, ma proprio quella sera devo assolutamente portare il pesce rosso a fare logopedia.”",
+            "“Mi piacerebbe un sacco, ma sono in regime di digiuno intermittente galattico e non posso uscire dal bunker.”",
+            "“Purtroppo mi coincide con il turno di notte per la sorveglianza del mio orto botanico interiore.”",
+            "“Eh, mi piacerebbe ma ho promesso di aiutare un mio cugino a rimontare un armadio IKEA senza istruzioni.”",
+            "“Sono in un momento di profondo distacco tecnologico e monachesimo tibet-provinciale, non prendo impegni fino al 2035.”",
+            "“Ho l'idraulico in casa dal 2018, non posso muovermi.”"
+        ];
+
+        function generaScusa() {
+            const randomIndex = Math.floor(Math.random() * scuse.length);
+            document.getElementById("scusa-output").innerText = scuse[randomIndex];
+        }
+    </script>
 
 </body>
 </html>
